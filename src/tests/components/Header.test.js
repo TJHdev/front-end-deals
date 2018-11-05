@@ -16,5 +16,4 @@ test('should call startLogout on button click', () => {
   expect(startLogout).toHaveBeenCalledTimes(1);
 });
 
-
 // LoginPage test file -> Should call startLogin on button click

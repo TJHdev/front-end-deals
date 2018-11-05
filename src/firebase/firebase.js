@@ -1,4 +1,4 @@
-import * as firebase from 'firebase'; 
+import * as firebase from 'firebase';
 // takes all of the named exports from firebase
 // and dumps them on a variable called firebase
 

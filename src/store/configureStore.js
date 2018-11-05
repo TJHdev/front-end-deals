@@ -13,6 +13,4 @@ export default () => {
   );
 
   return store;
-}
-
-
+};

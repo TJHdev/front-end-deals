@@ -1,11 +1,11 @@
 import { login, logout } from '../../actions/auth';
 
 test('should trigger login', () => {
-  const uid = 'lfjhlkfjhl'
+  const uid = 'lfjhlkfjhl';
   const action = login(uid);
   expect(action).toEqual({
     type: 'LOGIN',
-    uid: uid
+    uid
   });
 });
 

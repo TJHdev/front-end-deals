@@ -10,18 +10,22 @@ export const Header = ({ startLogout }) => (
         <Link className="header__title" to="/dashboard">
           <h1>Boilerplate</h1>
         </Link>
-        <button className="button button--link" onClick={startLogout}>Logout</button>
+        <button className="button button--link" onClick={startLogout}>
+          Logout
+        </button>
       </div>
     </div>
   </header>
-)
+);
 // <NavLink to="/create" activeClassName="is-active">Create expense</NavLink>
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   startLogout: () => dispatch(startLogout())
 });
 
-export default connect(undefined, mapDispatchToProps)(Header);
+export default connect(
+  undefined,
+  mapDispatchToProps
+)(Header);
 
 // <NavLink to="/help" activeClassName="is-active">Help</NavLink>
-
