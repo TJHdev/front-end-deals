@@ -1,22 +1,17 @@
 import 'react-dates/initialize';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import AppRouter, { history } from './routers/AppRouter';
-import configureStore from './store/configureStore';
+import { BrowserRouter } from 'react-router-dom';
+import AppRouter from './routers/AppRouter';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
-import { firebase } from './firebase/firebase';
-import { login, logout } from './actions/auth';
 import LoadingPage from './components/LoadingPage';
 
-const store = configureStore();
-
 const jsx = (
-  <Provider store={store}>
+  <BrowserRouter>
     <AppRouter />
-  </Provider>
+  </BrowserRouter>
 );
 
 let hasRendered = false;
@@ -27,18 +22,6 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<LoadingPage />, document.getElementById('app'));
+renderApp();
 
-firebase.auth().onAuthStateChanged(user => {
-  if (user) {
-    store.dispatch(login(user.uid));
-    renderApp();
-    if (history.location.pathname === '/') {
-      history.push('/dashboard');
-    }
-  } else {
-    store.dispatch(logout());
-    renderApp();
-    history.push('/');
-  }
-});
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
