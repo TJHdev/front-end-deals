@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Button from '../styled-components/Button';
 
-const LoginLayout = styled.div`
+const RegisterLayout = styled.div`
   background: url('/images/bg.jpg');
   background-size: cover;
 
@@ -20,7 +20,7 @@ const LoginLayout = styled.div`
   width: 100vw;
 `;
 
-const LoginLayoutBox = styled.div`
+const RegisterLayoutBox = styled.div`
   background: rgba(255, 255, 255, 0.8);
   border-radius: 3px;
   text-align: center;
@@ -29,14 +29,16 @@ const LoginLayoutBox = styled.div`
 `;
 
 export default () => (
-  <LoginLayout>
-    <LoginLayoutBox>
-      <Button>Login with Google</Button>
-      <Button>Login with Facebook</Button>
+  <RegisterLayout>
+    <RegisterLayoutBox>
+      <Button>Sign up with Google</Button>
+      <Button>Sign up with Facebook</Button>
+      <p>or</p>
+
       <hr />
-      <Link to="register">
-        <button type="button">Not joined yet? Sign up</button>
+      <Link to="login">
+        <button type="button">Already a member?</button>
       </Link>
-    </LoginLayoutBox>
-  </LoginLayout>
+    </RegisterLayoutBox>
+  </RegisterLayout>
 );

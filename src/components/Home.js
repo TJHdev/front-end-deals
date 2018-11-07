@@ -1,3 +1,9 @@
 import React from 'react';
 
-export default () => <div>This is the home page</div>;
+import ContentContainter from '../styled-components/ContentContainer';
+
+export default () => (
+  <ContentContainter>
+    <div>This is the home page</div>
+  </ContentContainter>
+);

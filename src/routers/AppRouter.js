@@ -3,6 +3,9 @@ import { Router, Route, Switch, NavLink } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 
 import HomePage from '../components/Home';
+import SubmitDealPage from '../components/SubmitDealPage';
+import LoginPage from '../components/LoginPage';
+import RegisterPage from '../components/RegisterPage';
 import Header from '../components/Header';
 
 // import DashboardPage from '../components/DashboardPage';
@@ -15,11 +18,15 @@ export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>
-    <Header />
-    <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/" component={HomePage} />
-    </Switch>
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/submit" component={SubmitDealPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/register" component={RegisterPage} />
+      </Switch>
+    </div>
   </Router>
 );
 
