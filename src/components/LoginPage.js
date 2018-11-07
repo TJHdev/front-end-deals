@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as yup from 'yup';
 
 import Button from '../styled-components/Button';
 
@@ -32,7 +34,6 @@ export default () => (
   <LoginLayout>
     <LoginLayoutBox>
       <Button>Login with Google</Button>
-      <Button>Login with Facebook</Button>
       <hr />
       <Link to="register">
         <button type="button">Not joined yet? Sign up</button>
