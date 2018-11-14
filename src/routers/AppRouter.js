@@ -23,14 +23,15 @@ const AppRouter = () => (
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/submit" component={SubmitDealPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/register" component={RegisterPage} />
       </Switch>
     </div>
   </Router>
 );
 
 export default AppRouter;
+
+// <Route path="/login" component={LoginPage} />
+// <Route path="/register" component={RegisterPage} />
 
 /*
 
